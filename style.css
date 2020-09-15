@@ -1,10 +1,30 @@
+:root
+{
+    --color-font-headers: rgb( 145, 145, 145 );
+    --color-boxes: rgb( 136, 132, 132 );
+    --color-bakground:  rgba( 252, 210, 210, 0.3 );
+}
+
 /* BODY */
 
 body
 {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 1rem;
+    font-size: 1.2rem;
+}
+
+span
+{
+    font-weight: bold;
+}
+
+h2
+{
+    font-size: 1.2rem;
+    margin-left: -20px;
+    color: var( --color-font-headers );
+    text-align: left;
 }
 
 /* HEADER */
@@ -13,7 +33,7 @@ header
 {
     font-weight: bold;
     font-size: 1.7rem;
-    color: rgb(145, 145, 145);
+    color: var( --color-font-headers );
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     margin-bottom: 2rem;
 }
@@ -23,5 +43,105 @@ header
 #navbar
 {
     position: fixed;
-    background-color: yellow;
+    min-width: 300px;
+    width: 300px;
+    height: 100vh;
+    background-color: var( --color-bakground );
+    box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.6 );
+    text-align: center;
+    padding: 1rem;
+}
+
+#navbar ul
+{
+    height: 90%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#navbar li
+{
+    position: relative;
+    list-style: none;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+    padding: 0.3rem;
+    background-color: var( --color-boxes );
+}
+
+#navbar a
+{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/* MAIN DOC */
+
+#main-doc
+{
+    position: absolute;
+    margin-left: 350px;
+    text-align: justify;
+}
+
+.main-section
+{
+    margin-bottom: 2.5rem;
+}
+
+.main-section header
+{
+    margin-bottom: 0;
+}
+
+.main-section a
+{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.main-section a:hover
+{
+    text-shadow: 1px 1px 10px black;
+}
+
+/* CODE */
+
+code
+{
+    display: block;
+    text-align: left;
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
+
+    background-color: var( --color-bakground );
+    border-radius: 0.2rem;
+}
+
+@media( max-width: 600px )
+{
+    body
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar
+    {
+        position: relative;
+        width: 90%;
+    }
+
+    #main-doc
+    {
+        position: relative;
+        margin-top: 2rem;
+    }
 }

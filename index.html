@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,118 +8,283 @@
 </head>
 <body>
     <nav id="navbar">
-        <header> Unity C# Documentation </header>
+        <header> CSS3 FlexBox </header>
         <ul>
-            <li><a href="#introduction" class="nav-link"> Introduction </a></li>
-            <li><a href="#variables" class="nav-link"> Variables </a></li>
-            <li><a href="#components" class="nav-link"> Componentes </a></li>
-            <li><a href="#main-functions" class="nav-link"> Main Functions </a></li>
-            <li><a href="#reference" class="nav-link"> Reference </a></li>
+            <li><a href="#introduction" class="nav-link"> Introdução </a></li>
+            <li><a href="#flex-direction" class="nav-link"> flex-direction </a></li>
+            <li><a href="#justify-container" class="nav-link"> justify-container </a></li>
+            <li><a href="#align-items" class="nav-link"> align-items </a></li>
+            <li><a href="#flex-wrap" class="nav-link"> flex-wrap </a></li>
+            <li><a href="#reference" class="nav-link"> Referência </a></li>
         </ul>
     </nav>
     <main id="main-doc">
         <section id="introduction" class="main-section">
-            <header> Introduction </header>
+            <header> Introdução </header>
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi nulla delectus labore consequatur alias atque quibusdam. Perspiciatis soluta dolor voluptates inventore veritatis ea. Suscipit expedita voluptates deleniti repudiandae delectus odio.
-            </p>
-        </section>
-        <section id="variables" class="main-section">
-            <header> Variables </header>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione corporis eius dolor qui quas, ut adipisci id repellendus dicta reiciendis a reprehenderit saepe laboriosam omnis unde nihil alias esse molestias.
+                A interface do usuário de um site tem dois componentes. Primeiro,
+                existem elementos visuais, como cores, fontes, imagens. Segundo,
+                há o posicionamento desses elementos. No Web Design responsivo, um
+                layout de interface do usuário deve acomodar muitos navegadores e
+                dispositivos diferentes que acessam o conteúdo.
             </p>
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit illum velit, dolorem omnis, quae libero sint consequatur labore blanditiis eos vero temporibus odit nemo, enim fuga doloribus expedita modi atque.
-            </p>
-            <code>
-                if( true )
-                {
-
-                }
-                else
-                {
-
-                }
-            </code>
-        </section>
-        <section id="components" class="main-section">
-            <header> Components </header>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit exercitationem eos unde ad veniam modi quod praesentium totam quam! Optio, nam? Maxime eius nam necessitatibus minima odio! Temporibus, unde repudiandae.
+                O CSS3 introduziu caixas flexíveis, ou flexbox, para criar layouts
+                páginas para uma interface de usuário dinâmica. É um modo de layout
+                que organiza elementos de maneira previsível para diferentes tamanhos
+                de tela de navegadores. Embora um pouco novos, todos os navegadores
+                modernos populares suportam o flexbox.
             </p>
             <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam maxime necessitatibus fuga a nesciunt tenetur, possimus, quisquam repudiandae assumenda corrupti libero accusantium neque sit corporis reprehenderit dolor sequi eos vel.
+                A adição do <span>display: flex</span> a um elemento o transforma em contêiner flexível.
             </p>
             <code>
-                if( true )
-                {
+                &lt;style&gt;
+                    #container
+                    {
+                        <span>display: flex;</span>
+                    }
+                &lt;/style&gt;
 
-                }
-                else
-                {
-
-                }
+                &lt;div id="#container"&gt;&lt;/div&gt;
             </code>
         </section>
-        <section id="main-functions" class="main-section">
-            <header> Main Functions </header>
+        <section id="flex-direction" class="main-section">
+            <header> Propriedade 'flex-direction' </header>
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt laudantium hic, aliquid laboriosam neque doloribus quos! Aliquid doloribus a distinctio ea quas commodi tenetur recusandae esse, minima incidunt laudantium facere?
+                É possível alinhar quaisquer filhos desse elemento em linhas ou colunas. 
+                Você faz isso adicionando a <span>flex-direction</span> propriedade
+                ao item pai e configurando-a para linha ou coluna. Criar uma linha alinhará
+                os filhos horizontalmente, e criar uma coluna alinhará os filhos verticalmente.
+            </p>
+            <code>
+                &lt;style&gt;
+                    #box-container 
+                    {
+                      <span>display: flex;</span>
+                      height: 500px;
+                      <span>flex-direction: row-reverse;  &xlArr;  // row, column, row-reverse, column-reverse</span>
+                    }
+                    
+                    #box-1 
+                    {
+                      background-color: dodgerblue;
+                      width: 50%;
+                      height: 50%;
+                    }
+                    
+                    #box-2 
+                    {
+                      background-color: orangered;
+                      width: 50%;
+                      height: 50%;
+                    }
+                &lt;/style&gt;
+                
+                &lt;div id="box-container"&gt;
+                    &lt;div id="box-1"&gt;&lt;/div&gt;
+                    &lt;div id="box-2"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            </code>
+        </section>
+        <section id="justify-container" class="main-section">
+            <header> Propriedade 'justify-container' </header>
+            <p>
+                Às vezes, os itens flexíveis em um contêiner flexível não preenchem todo o espaço no
+                contêiner. É comum querer dizer ao CSS como alinhar e espaçar os itens flexíveis de
+                uma certa maneira. Felizmente, a <span>justify-content</span> propriedade tem várias opções para
+                fazer isso. Mas primeiro, há alguma terminologia importante a entender antes de revisar
+                as opções.
+            </p>
+            <a href="https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg" target="_blank">
+                Imagem retratando os conceitos abaixo
+            </a>
+            <p>
+                Lembre-se de que a configuração de um contêiner flexível como uma linha coloca os itens
+                flexíveis lado a lado, da esquerda para direita. Um contêiner flexível definido como uma coluna
+                coloca os itens flexíveis em uma pilha vertical de cima para baixo.
             </p>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique odit repellat temporibus iste commodi molestiae totam maxime eum quibusdam impedit rem optio officiis, harum quis explicabo veritatis illum quam nisi.
+                Para cada um, a direção em que os itens flexíveis são organizados é chamada de <span>eixo principal (main axis)</span>.
+                Para uma linha, essa é uma linha horizontal que corta cada item. E para uma coluna, o <span>eixo principal</span>
+                é uma linha vertical através dos itens.
             </p>
             <ul>
-                <li>Awake()</li>
-                <li>Start()</li>
-                <li>Update()</li>
-                <li>FixedUpdate()</li>
-                <li>OnCollision()</li>
+                <h2>Valores do justify-container:</h2>
+                <li><span>center:</span> alinha todos os itens flexíveis ao centro do contêiner flexível </li>
+                <li><span>flex-start:</span> alinha itens ao ínicio do contêiner flexível.</li>
+                <li><span>flex-end:</span> alinha itens ao final do contêiner flexível.</li>
+                <li><span>space-between:</span> alinha os itens ao centro do eixo principal, com espaço extra colocado entre eles.</li>
+                <li><span>space-around:</span> o espaço é distribuído em todos os itens com meio espaço em cada extremidade do contêiner flexível.</li>
+                <li><span>space-evenly:</span> distribui o espaço uniformemente entre os itens flexíveis com um espaço total em cada extremidade do contêiner flexível.</li>
             </ul>
+            <code>
+                &lt;style&gt;
+                    #box-container 
+                    {
+                      background: black;
+                      display: flex;
+                      height: 500px;
+                      <span>justify-content: space-between;</span>
+                    }
+
+                    #box-1 
+                    {
+                      background-color: dodgerblue;
+                      width: 25%;
+                      height: 100%;
+                    }
+                
+                    #box-2 
+                    {
+                      background-color: orangered;
+                      width: 25%;
+                      height: 100%;
+                    }
+                &lt;/style&gt;
+                
+                &lt;div id="box-container"&gt;
+                    &lt;div id="box-1"&gt;&lt;/div&gt;
+                    &lt;div id="box-2"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            </code>
+        </section>
+        <section id="align-items" class="main-section">
+            <header> Propriedade 'align-items' </header>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi possimus, nisi nobis in veritatis magnam voluptates odio optio alias obcaecati. Quia, nam rem alias similique ea officia aperiam recusandae molestias!
+                A propriedade <span>align-items</span> é semelhante a <span>justify-content</span>. Lembre-se de que a <span>justify-content</span>
+                alinhava itens flexíveis ao longo do <span>eixo principal</span>.
             </p>
+            <p>
+                Os contêiners flexíveis também possuem um <span>eixo transversal (cross axis)</span>, que é o oposto do eixo principal.
+                Para linhas, o eixo transversal é vertical, e para colunas, o eixo transversal é horizontal.
+            </p>
+            <p>
+                O CSS oferece a <span>align-items</span> propriedade de alinhar itens flexíveis ao longo do eixo trasversal.
+            </p>
+            <ul>
+                <h2>Valores do align-items:</h2>
+                <li><span>flex-start:</span> alinha itens ao início do contêiner flexível.</li>
+                <li><span>flex-end:</span> alinha itens ao final do contêiner flexível.</li>
+                <li><span>center:</span> alinha itens ao centro.</li>
+                <li><span>strech:</span> estica os itens para preencher o recipiente flexível.</li>
+                <li><span>baseline:</span> alinha itens às linhas de base (linha em que as letras se assentam).</li>
+            </ul>
             <code>
-                if( true )
-                {
-
-                }
-                else
-                {
-
-                }
+                &lt;style&gt;
+                    #box-container 
+                    {
+                      background: gray;
+                      display: flex;
+                      height: 500px;
+                      <span>align-items: center;</span>
+                    }
+                    #box-1 
+                    {
+                      background-color: dodgerblue;
+                      width: 200px;
+                      font-size: 24px;
+                    }
+                
+                    #box-2 
+                    {
+                      background-color: orangered;
+                      width: 200px;
+                      font-size: 18px;
+                    }
+                &lt;/style&gt;
+                
+                &lt;div id="box-container"&gt;
+                    &lt;div id="box-1"&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;
+                    &lt;div id="box-2"&gt;&lt;p&gt;Goodbye&lt;/p&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
+        </section>
+        <section id="flex-wrap" class="main-section">
+            <header> Propriedade 'flex-wrap' </header>
+            <p>
+                O CSS flexbox possui um recurso para dividir um item flexível em várias linhas ou colunas.
+                Por padrão, um contêiner flexível encaixa todos os itens flexíveis. Por exemplo, uma linha
+                estará toda em uma linha.
+            </p>
+            <p>
+                No entanto, o uso da <span>flex-wrap</span> informa ao CSS para quebrar itens. Isso significa que itens
+                extras são movidos para uma nova linha ou coluna. O ponto de interrupção de onde a embalagem
+                acontece depende do tamanho dos itens e do tamanho do contêiner.
+            </p>
+            <ul>
+                <h2>Valores do flex-wrap:</h2>
+                <li><span>nowrap:</span> configuração padrão e não quebra itens.</li>
+                <li><span>wrap:</span> agrupa os itens da esquerda para direita, se estiverem em uma linha, ou de cima pra baixo, se estiverem em uma coluna.</li>
+                <li><span>wrap-reverse:</span> o inverso do wrap.</li>
+            </ul>
             <code>
-                if( true )
-                {
-
-                }
-                else
-                {
+                &lt;style&gt;
+                    #box-container 
+                    {
+                      background: gray;
+                      height: 100%;
+                      display: flex;
+                      flex-direction: column;
+                      <span>flex-wrap: wrap;</span>
+                    }
                     
-                }
-            </code>
-            <code>
-                if( true )
-                {
+                    #box-1 
+                    {
+                      background-color: dodgerblue;
+                      width: 25%;
+                      height: 50%;
+                    }
+                
+                    #box-2 
+                    {
+                      background-color: orangered;
+                      width: 25%;
+                      height: 50%;
+                    }
 
-                }
-                else
-                {
-                    
-                }
+                    #box-3 
+                    {
+                      background-color: violet;
+                      width: 25%;
+                      height: 50%;
+                    }
+
+                    #box-4 
+                    {
+                      background-color: yellow;
+                      width: 25%;
+                      height: 50%;
+                    }
+
+                    #box-5 
+                    {
+                      background-color: green;
+                      width: 25%;
+                      height: 50%;
+                    }
+
+                    #box-6 
+                    {
+                      background-color: black;
+                      width: 25%;
+                      height: 50%;
+                    }
+                &lt;/style&gt;
+                
+                &lt;div id="box-container"&gt;
+                    &lt;div id="box-1"&gt;&lt;/div&gt;
+                    &lt;div id="box-2"&gt;&lt;/div&gt;
+                    &lt;div id="box-3"&gt;&lt;/div&gt;
+                    &lt;div id="box-4"&gt;&lt;/div&gt;
+                    &lt;div id="box-5"&gt;&lt;/div&gt;
+                    &lt;div id="box-6"&gt;&lt;/div&gt;
+                &lt;/div&gt;
             </code>
         </section>
         <section id="reference" class="main-section">
-            <header> Reference </header>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe distinctio fugit veritatis! Illum, amet, quos quae repellendus impedit earum nesciunt est iste itaque optio quod dignissimos, odit omnis officia hic?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum minima assumenda repellendus! Praesentium labore asperiores atque officia molestiae aspernatur unde eius eligendi saepe voluptate, laudantium fuga laboriosam odio, minus enim!
-            </p>
-            <a href=""> Unity Documentation </a>
+            <header> Referência </header>
+            <a href="https://www.freecodecamp.org/" target="_blank"> freeCodeCamp </a>
         </section>
     </main>
 </body>
