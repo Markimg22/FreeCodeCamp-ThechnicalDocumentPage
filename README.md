@@ -1,4 +1,4 @@
 # FreeCodeCamp-ThechnicalDocumentPage
 Projeto #4 - FreeCodeCamp
 
-!alt[project image](https://github.com/Markimg22/FreeCodeCamp-ThechnicalDocumentPage/blob/master/image-layout.PNG)
+![project image](https://github.com/Markimg22/FreeCodeCamp-ThechnicalDocumentPage/blob/master/image-layout.PNG)
